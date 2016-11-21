@@ -72,7 +72,7 @@ class Welcome extends CI_Controller {
 	 {
 		$data=’’;
 		$query2=''; 
-		$sql2= "select * from maestro order by id_estudiante desc limit 100”;
+		$sql2= "select * from maestra order by id_estudiante desc limit 100”;
 		$query2 = $this->db->query($sql2, array($query2));
 		$data['mix']=$query2->result_array();
        		$this->load->view('reporte', $data);
