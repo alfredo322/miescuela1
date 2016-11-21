@@ -73,6 +73,14 @@ class Welcome extends CI_Controller {
 		$data['mix']=$query2->result_array();
        		$this->load->view('reporte', $data);
 	 }
+	public function procesarr()
+	{
+		$query = ''; //declaramos para evitar advertencias de PHP
+		$enviar = $this->input->post('Envia', TRUE);
+		$sql= "mysql_connect('localhost','root','')";
+		$query = $this->db->query($sql, array($query));
+		redirect('/controlador/formulario', 'refresh'); //redirecciona para seguir insertando
+ 	}
 
 	
 }
