@@ -25,8 +25,40 @@ class Welcome extends CI_Controller {
 	public function procesa()
 	{
 		$query = ''; //declaramos para evitar advertencias de PHP
-		$nombre = $this->input->post('nombre', TRUE);
-		$sql= "insert into _tabla(nombre) values('$nombre')  ";
+		$nombre = $this->input->post('nombres', TRUE);
+		$sql= "insert into _maestra(nombres) values('$nombre')  ";
+		$query = $this->db->query($sql, array($query));
+		redirect('/controlador/formulario', 'refresh'); //redirecciona para seguir insertando
+ 	}
+	public function procesar()
+	{
+		$query = ''; //declaramos para evitar advertencias de PHP
+		$apellidos = $this->input->post('apellidos', TRUE);
+		$sql= "insert into _maestra(apellidos) values('$apellidos')  ";
+		$query = $this->db->query($sql, array($query));
+		redirect('/controlador/formulario', 'refresh'); //redirecciona para seguir insertando
+ 	}
+	public function proces()
+	{
+		$query = ''; //declaramos para evitar advertencias de PHP
+		$edad = $this->input->post('edad', TRUE);
+		$sql= "insert into _maestra(edad) values('$edad')  ";
+		$query = $this->db->query($sql, array($query));
+		redirect('/controlador/formulario', 'refresh'); //redirecciona para seguir insertando
+ 	}
+	public function proce()
+	{
+		$query = ''; //declaramos para evitar advertencias de PHP
+		$fecha = $this->input->post('fecha_nacimiento', TRUE);
+		$sql= "insert into _maestra(fecha_nacimiento) values('$fecha')  ";
+		$query = $this->db->query($sql, array($query));
+		redirect('/controlador/formulario', 'refresh'); //redirecciona para seguir insertando
+ 	}
+	public function pro()
+	{
+		$query = ''; //declaramos para evitar advertencias de PHP
+		$celular = $this->input->post('celular', TRUE);
+		$sql= "insert into _detalle(celular) values('$celular')  ";
 		$query = $this->db->query($sql, array($query));
 		redirect('/controlador/formulario', 'refresh'); //redirecciona para seguir insertando
  	}
