@@ -22,5 +22,29 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('formulario');
 	}
+	public function procesa()
+	{
+		$query = ''; //declaramos para evitar advertencias de PHP
+		$nombre = $this->input->post('nombre', TRUE);
+		$sql= "insert into _tabla(nombre) values('$nombre')  ";
+		$query = $this->db->query($sql, array($query));
+		redirect('/controlador/formulario', 'refresh'); //redirecciona para seguir insertando
+ 	}
+	public  function formulario()
+	{
+		$data=’’; //su única utilidad es mostrar el formulario para llenar datos
+        	$this->load->view('formulario', $data);
+   	}
+
+ 	 public  function reporte_master()
+	 {
+		$data=’’;
+		$query2=''; 
+		$sql2= "select * from maestro order by id_estudiante desc limit 100”;
+		$query2 = $this->db->query($sql2, array($query2));
+		$data['mix']=$query2->result_array();
+       		$this->load->view('reporte', $data);
+	 }
+
 	
 }
