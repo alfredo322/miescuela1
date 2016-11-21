@@ -66,7 +66,7 @@ class Welcome extends CI_Controller {
 
  	 public  function reporte_master()
 	 {
-		$data=’’;
+		$data='';
 		$query2=''; 
 		$sql2= "select * from maestra order by id_estudiante desc limit 100";
 		$query2 = $this->db->query($sql2, array($query2));
