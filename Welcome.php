@@ -20,7 +20,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('formulario');
+		$data='';
+		$this->load->view('formulario',$data);
 	}
 	public function procesa()
 	{
@@ -62,11 +63,6 @@ class Welcome extends CI_Controller {
 		$query = $this->db->query($sql, array($query));
 		redirect('/controlador/formulario', 'refresh'); //redirecciona para seguir insertando
  	}
-	public  function formulario()
-	{
-		$data=’’; //su única utilidad es mostrar el formulario para llenar datos
-        	$this->load->view('formulario', $data);
-   	}
 
  	 public  function reporte_master()
 	 {
