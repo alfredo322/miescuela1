@@ -73,6 +73,12 @@ class Welcome extends CI_Controller {
 		$data['mix']=$query2->result_array();
        		$this->load->view('reporte', $data);
 	 }
+	public function validar()
+	{
+		if(isset($_POST['Enviar'])) {
+			require("Welcome.php");
+		}
+	}
 
 
 	
